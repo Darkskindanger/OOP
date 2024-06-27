@@ -1,0 +1,36 @@
+OOP: 
+Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to structure software programs. It is centered around the concepts of "objects" and "classes," where objects are instances of classes. Here are the key concepts and principles of OOP:
+
+Key Concepts:
+
+Classes and Objects:
+
+Class: A blueprint or template for creating objects. It defines a set of properties (attributes) and methods (functions or procedures) that the created objects will have.
+Object: An instance of a class. It is a self-contained entity that consists of both data (attributes) and procedures (methods) to manipulate the data.
+Attributes and Methods:
+
+Attributes and Methods:
+
+Attributes: Data stored inside an object or class. They are also known as fields or properties.
+Methods: Functions defined inside a class that describe the behaviors of an object. Methods can manipulate an object's attributes and perform operations on them.
+
+4 Pillars make up OOP:
+
+1.Encapsulation is the bundling of data (attributes) and methods that operate on the data into a single unit or class. It restricts direct access to some of an object's components, which is a means of preventing unintended interference and misuse of the data.
+Inheritance:
+
+2.Inheritance is a mechanism where a new class (called a subclass or derived class) inherits attributes and methods from an existing class (called a superclass or base class). This allows for code reusability and the creation of a hierarchical relationship between classes.
+Polymorphism:
+
+3.Polymorphism allows objects of different classes to be treated as objects of a common superclass. It is the ability of different objects to respond to the same message (method call) in different ways. There are two types of polymorphism: compile-time (method overloading) and runtime (method overriding).
+Abstraction:
+
+4.Abstraction involves hiding complex implementation details and showing only the necessary features of an object. It helps to reduce complexity and increase efficiency by allowing the programmer to focus on interactions at a higher level without needing to understand the intricate details.
+
+Principles:
+
+1.DRY (Don't Repeat Yourself): OOP encourages code reusability through inheritance and polymorphism, which helps to avoid redundancy.
+
+2.Modularity: OOP promotes modular code, where different parts of a program can be developed and tested independently.
+
+3.Maintainability: Encapsulation and modularity make it easier to maintain and modify code, as changes to one part of a program are less likely to impact other parts.
