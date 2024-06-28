@@ -1,22 +1,26 @@
 // Exercises (tech with Nader)
 
 // Warm up:
-class Animal{
-constructor(type,name){
+class Animal {
+  constructor(type, name) {
     this.type = type;
     this.name = name;
+  }
+
+  getType = () => {
+    return this.type;
+  };
+  getName = () => {
+    return this.name;
+  };
 }
 
-getType = ()=>{return this.type}
-getName = ()=>{return this.name}
-}
-
-let tiger = new Animal('Mammal', "tiger")
-tiger.name='Liam'
-console.log(tiger)
-let bear = new Animal('Mammal','Bear')
-bear.name = 'Chris'
-console.log(bear)
+let tiger = new Animal('Mammal', 'tiger');
+tiger.name = 'Liam';
+console.log(tiger);
+let bear = new Animal('Mammal', 'Bear');
+bear.name = 'Chris';
+console.log(bear);
 
 // Ex:1
 // 1. Create a class called "Student"
@@ -28,28 +32,36 @@ console.log(bear)
 // 6. Use the "gpa" method on "eva" to print out their average grade (Should be 84.33)
 
 let initiator = 0;
-class Student{constructor(name,major,grades){
-    this.name = name
-    this.major=major
-    this.grades=grades
-}
-getName = ()=>{return this.name}
-getMajor = ()=>{return this.major}
-getGrades = ()=>{return this.grades}
+class Student {
+  constructor(name, major, grades) {
+    this.name = name;
+    this.major = major;
+    this.grades = grades;
+  }
+  getName = () => {
+    return this.name;
+  };
+  getMajor = () => {
+    return this.major;
+  };
+  getGrades = () => {
+    return this.grades;
+  };
 
-addGrade = (grade)=>{
-    this.grades.push(grade)
-}    
-gpa = (arr)=>{arr.forEach(element => {
-initiator+=element;
-});
-return initiator / arr.length
-}
+  addGrade = (grade) => {
+    this.grades.push(grade);
+  };
+  gpa = (arr) => {
+    arr.forEach((element) => {
+      initiator += element;
+    });
+    return initiator / arr.length;
+  };
 }
 
-let eva = new Student('Eva','Arts',[95,75,83])
-eva.addGrade(100)
-console.log(eva.gpa(eva.grades))
+let eva = new Student('Eva', 'Arts', [95, 75, 83]);
+eva.addGrade(100);
+console.log(eva.gpa(eva.grades));
 
 // Ex:2
 // 1. Create a class called "Bookstore"
@@ -64,30 +76,103 @@ console.log(eva.gpa(eva.grades))
 // 5. Create 2 Books:
 // const nineteen84 = new Book("1984", "George Orwell") const hp = new Book ("Harry Potter", "J.K. Rowling")
 // 6.Create a Bookstore: const bookstore = new Bookstore([nineteen84,hp])
-// 7.Call bookstore.listBooks() and make sure it works: 
+// 7.Call bookstore.listBooks() and make sure it works:
 // 1984 by George Orwell
 // Harry Potter by J.K Rowling
 
-class Bookstore{
-    constructor(books){
-        this.books = books
-    }
-     listbooks = (books)=>{this.books.forEach(book => {
-        console.log(`${book.name} by ${book.author}`)
-     });}
+class Bookstore {
+  constructor(books) {
+    this.books = books;
+  }
+  listbooks = (books) => {
+    this.books.forEach((book) => {
+      console.log(`${book.name} by ${book.author}`);
+    });
+  };
 }
 
-class Book{constructor(name,author){
-    this.name = name
-    this.author = author
-}
-getName = ()=>{return this.name}
-getAuthor = ()=>{return this.author}
+class Book {
+  constructor(name, author) {
+    this.name = name;
+    this.author = author;
+  }
+  getName = () => {
+    return this.name;
+  };
+  getAuthor = () => {
+    return this.author;
+  };
 }
 
-const nineteen84 = new Book('1984','George Orwell')
-const hp = new Book('Harry Potter','JK Rowling')
+const nineteen84 = new Book('1984', 'George Orwell');
+const hp = new Book('Harry Potter', 'JK Rowling');
 
-const bookstore = new Bookstore([nineteen84,hp])
-console.log(bookstore)
-bookstore.listbooks(bookstore)
+const bookstore = new Bookstore([nineteen84, hp]);
+console.log(bookstore);
+bookstore.listbooks(bookstore);
+
+// 1. Lookup the retro arcade game: Space Invaders
+// on Google for some pictures
+// Eg:
+// https://en.wikipedia.org/wiki/Space_Invaders
+// 2. How would you build a class to model the Player (Spaceship) and the Enemy (Flying Alien)?
+// 3. Try to think of all the different fields and methods each would have in a real game. What would you want to have in them?
+// 4. Write these out first on paper/text to brainstorm, then implement the classes in JS
+// * This is purposefully open-ended to allow you the creative freedom to design these classes
+
+class Player {
+  constructor(lives, level, highScore, lowScore, avgScore, confirmedKills) {
+    this.lives = lives;
+    this.level = level;
+    this.highScore = highScore;
+    this.lowScore = lowScore;
+    this.avgScore = avgScore;
+    this.confirmedKills = confirmedKills;
+  }
+  getLives = () => {
+    return this.lives;
+  };
+  getLevel = () => {
+    return this.level;
+  };
+  getHighScore = () => {
+    return this.highScore;
+  };
+
+  getAvgScore = () => {
+    this.avgScore = (this.highScore + this.lowScore) / 2;
+    return this.avgScore;
+  };
+  getConfirmedKills = (allies) => {
+    this.confirmedKills = 100 - allies;
+    return this.confirmedKills;
+  };
+}
+class Enemy {
+  constructor(species, level, hp, allies) {
+    this.species = species;
+    this.level = level;
+    this.hp = hp;
+    this.allies = allies;
+  }
+
+  getSpecies = () => {
+    return this.species;
+  };
+  getLevel = () => {
+    return this.level;
+  };
+  getHp = () => {
+    return this.hp;
+  };
+  getAlliess = () => {
+    return this.allies;
+  };
+}
+
+let player1 = new Player(3, 10, 200, 45);
+let enemy1 = new Enemy('noopa', 99, 45, 78);
+console.log(enemy1);
+console.log(player1.getAvgScore()); //set the avg score based on the input high/low scores
+player1.getConfirmedKills(enemy1.allies); // set the confrimed kills based on creating the enemy obj and providing the ally count
+console.log(player1);
