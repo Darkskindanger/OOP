@@ -1,0 +1,17 @@
+{
+  "name": "oop",
+  "version": "1.0.0",
+  "description": "OOP: \r Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to structure software programs. It is centered around the concepts of \"objects\" and \"classes,\" where objects are instances of classes. Here are the key concepts and principles of OOP:",
+  "main": "OOP.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "eslint": "^9.6.0",
+    "globals": "^15.6.0",
+    "prettier": "3.3.2"
+  }
+}
