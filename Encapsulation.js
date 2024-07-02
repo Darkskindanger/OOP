@@ -32,3 +32,27 @@ class CustomDB extends Database {
 }
 
 // Encapsulation is useful for creating functional classes to be used by end users/developers while hiding the inner workings to prevent errors or ill intended changes to code from breaking the code
+
+// Static Keyword: Adds fields/Methods directy to the class object itself (Below, Utils). This will behave the same as a normal object and wont require an instance of Utils to be accessed. These properties WONT have the ability to ammended or changed. They belong to the Parent class object.
+
+class Utils {
+  static description = 'Awesome Utilities';
+  description = 'Another description';
+
+  static caps(str) {
+    return str.toUpperCase();
+  }
+
+  lower(str) {
+    return str.toLowerCase();
+  }
+}
+
+consle.log(Utils.description);
+console.log(Utils.caps);
+
+console.log(Object.getOwnPropertyNames(Utils));
+
+const utils = new Utils();
+console.log(utils);
+console.log(Object.getOwnPropertyNames(utils));
